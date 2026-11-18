@@ -1,0 +1,249 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>rAlix AI — Agents, Workflows, Websites & Apps</title>
+  <meta name="description" content="rAlix AI builds AI agents, automated workflows, websites and apps. Founded by Rahil Manji and Ali Mehdi Hemani." />
+  <meta name="theme-color" content="#04060a" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%2304060a'/%3E%3Ctext x='16' y='22' text-anchor='middle' font-family='Arial' font-weight='800' font-size='16' fill='%232a86ff'%3ErA%3C/text%3E%3C/svg%3E" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css?v=12" />
+  <script type="importmap">
+    { "imports": { "three": "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js" } }
+  </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
+  <script type="module" src="js/main.js?v=12"></script>
+</head>
+<body>
+  <div class="cursor" aria-hidden="true"><span class="cursor__dot"></span><span class="cursor__ring"></span></div>
+  <div class="loader" aria-hidden="true">
+    <div class="loader__inner">
+      <span class="mono">rALIX AI / INITIALISING</span>
+      <span class="loader__count mono">000</span>
+    </div>
+    <div class="loader__bar"><span></span></div>
+  </div>
+
+  <!-- ============ NAV ============ -->
+  <header class="nav">
+    <a href="#top" class="logo" aria-label="rAlix AI home">
+      <span class="logo__mark">rAlix</span><span class="logo__ai">.ai</span>
+    </a>
+    <nav class="nav__links" aria-label="Primary">
+      <a href="#work">Work</a>
+      <a href="#services">Services</a>
+      <a href="#founders">About</a>
+      <a href="#lab">Lab</a>
+    </nav>
+    <div class="nav__right">
+      <span class="nav__clock mono" title="Your local time"><i class="pulse"></i><span data-clock>--:--</span></span>
+      <a href="#contact" class="btn btn--primary btn--sm magnetic">Book a call</a>
+      <button class="nav__burger" aria-label="Open menu" aria-expanded="false"><span></span><span></span></button>
+    </div>
+  </header>
+  <div class="mobile-menu" hidden>
+    <a href="#work">Work</a><a href="#services">Services</a><a href="#founders">About</a><a href="#lab">Lab</a><a href="#contact">Contact</a>
+  </div>
+
+  <main id="top">
+    <!-- ============ HERO ============ -->
+    <section class="hero" id="hero">
+      <div class="hero__canvas" id="hero-canvas"></div>
+      <div class="hero__vignette"></div>
+      <div class="hero__content">
+        <p class="hero__meta mono" data-scramble>RAHIL MANJI &amp; ALI MEHDI HEMANI <i>/</i> AI &amp; AUTOMATION STUDIO <i>/</i> rALIX AI</p>
+        <div class="hero__copy">
+          <h1 class="hero__title">We build agents, workflows,<br/>websites and apps — <span class="rotator" aria-live="polite"><span>that think.</span></span></h1>
+          <a href="#work" class="btn btn--primary magnetic">Explore our work <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2"/></svg></a>
+        </div>
+      </div>
+      <div class="hero__foot">
+        <span class="mono hero__index"><b>01</b> ASK</span>
+        <span class="mono hero__hint">MOVE YOUR CURSOR ACROSS THE PORTRAIT</span>
+        <button class="hero__pause" aria-label="Pause animation" aria-pressed="false">
+          <svg class="i-pause" viewBox="0 0 24 24" width="14" height="14"><path d="M7 5h3v14H7zM14 5h3v14h-3z" fill="currentColor"/></svg>
+          <svg class="i-play" viewBox="0 0 24 24" width="14" height="14"><path d="M7 5l12 7-12 7z" fill="currentColor"/></svg>
+        </button>
+      </div>
+    </section>
+
+    <!-- ============ 01 ASK ============ -->
+    <section class="ask" id="ask">
+      <h2 class="mega split">Tell us what you need.</h2>
+      <div class="ask__grid">
+        <p class="lead reveal">Describe the problem in one sentence. We'll come back with how an agent, an automation or a product would solve it — and what it would take.</p>
+        <form class="prompt reveal" id="prompt-form" autocomplete="off">
+          <label class="mono prompt__label" for="prompt-input">&gt; rALIX / NEW BRIEF</label>
+          <div class="prompt__row">
+            <input id="prompt-input" name="brief" placeholder="e.g. Answer our support emails automatically…" />
+            <button class="prompt__send" aria-label="Send brief"><svg viewBox="0 0 24 24" width="18" height="18"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2"/></svg></button>
+          </div>
+          <div class="chips">
+            <button type="button" class="chip">An AI agent for customer support</button>
+            <button type="button" class="chip">Automate our lead intake → CRM</button>
+            <button type="button" class="chip">A website that actually converts</button>
+            <button type="button" class="chip">An internal app for our team</button>
+          </div>
+        </form>
+      </div>
+    </section>
+
+    <div class="marquee" aria-hidden="true">
+      <div class="marquee__track">
+        <span>AGENTS</span><i>✦</i><span>WORKFLOWS</span><i>✦</i><span>WEBSITES</span><i>✦</i><span>APPS</span><i>✦</i><span>RAG</span><i>✦</i><span>INTEGRATIONS</span><i>✦</i>
+        <span>AGENTS</span><i>✦</i><span>WORKFLOWS</span><i>✦</i><span>WEBSITES</span><i>✦</i><span>APPS</span><i>✦</i><span>RAG</span><i>✦</i><span>INTEGRATIONS</span><i>✦</i>
+      </div>
+    </div>
+
+    <!-- ============ 02 SERVICES ============ -->
+    <section class="services" id="services">
+      <header class="sec-head">
+        <span class="mono sec-head__idx"><b>02</b> BUILD</span>
+        <h2 class="h2 split">Four things we build.<br/><span class="dim">All of them talk to each other.</span></h2>
+      </header>
+      <div class="cards">
+        <article class="card tilt reveal">
+          <div class="card__glow"></div>
+          <span class="mono card__n">/01</span>
+          <svg class="card__icon" viewBox="0 0 48 48"><circle cx="24" cy="24" r="9" fill="none" stroke="currentColor" stroke-width="1.5"/><circle cx="24" cy="24" r="3" fill="currentColor"/><path d="M24 4v8M24 36v8M4 24h8M36 24h8M10 10l6 6M32 32l6 6M38 10l-6 6M16 32l-6 6" stroke="currentColor" stroke-width="1.5"/></svg>
+          <h3>AI Agents</h3>
+          <p>Assistants that read, reason and act — support, sales, ops, research. Grounded in your own data, with guardrails and hand-off to humans.</p>
+          <ul class="tags mono"><li>LLMs</li><li>RAG</li><li>Tool use</li><li>Voice</li></ul>
+        </article>
+        <article class="card tilt reveal">
+          <div class="card__glow"></div>
+          <span class="mono card__n">/02</span>
+          <svg class="card__icon" viewBox="0 0 48 48"><rect x="4" y="8" width="12" height="10" rx="2" fill="none" stroke="currentColor" stroke-width="1.5"/><rect x="32" y="8" width="12" height="10" rx="2" fill="none" stroke="currentColor" stroke-width="1.5"/><rect x="18" y="30" width="12" height="10" rx="2" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M16 13h16M10 18v6h14v6M38 18v6H24" fill="none" stroke="currentColor" stroke-width="1.5"/></svg>
+          <h3>Workflows</h3>
+          <p>The boring work, automated. Lead intake, invoicing, reporting, onboarding — wired across the tools you already use.</p>
+          <ul class="tags mono"><li>n8n</li><li>Zapier</li><li>Make</li><li>APIs</li></ul>
+        </article>
+        <article class="card tilt reveal">
+          <div class="card__glow"></div>
+          <span class="mono card__n">/03</span>
+          <svg class="card__icon" viewBox="0 0 48 48"><rect x="4" y="8" width="40" height="30" rx="3" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M4 15h40" stroke="currentColor" stroke-width="1.5"/><circle cx="9" cy="11.5" r="1.2" fill="currentColor"/><circle cx="13" cy="11.5" r="1.2" fill="currentColor"/><path d="M12 24h14M12 30h22" stroke="currentColor" stroke-width="1.5"/></svg>
+          <h3>Websites</h3>
+          <p>Fast, motion-rich sites like this one — designed to convert, built to be edited, and smart enough to answer questions.</p>
+          <ul class="tags mono"><li>WebGL</li><li>Next.js</li><li>CMS</li><li>SEO</li></ul>
+        </article>
+        <article class="card tilt reveal">
+          <div class="card__glow"></div>
+          <span class="mono card__n">/04</span>
+          <svg class="card__icon" viewBox="0 0 48 48"><rect x="14" y="4" width="20" height="40" rx="4" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M21 39h6" stroke="currentColor" stroke-width="1.5"/><path d="M19 14h10M19 20h10M19 26h6" stroke="currentColor" stroke-width="1.5"/></svg>
+          <h3>Apps</h3>
+          <p>Web and mobile apps, dashboards and internal tools — with AI built in from day one, not bolted on later.</p>
+          <ul class="tags mono"><li>React</li><li>Mobile</li><li>Supabase</li><li>Auth</li></ul>
+        </article>
+      </div>
+    </section>
+
+    <!-- ============ 03 PROCESS ============ -->
+    <section class="process" id="process">
+      <div class="process__sticky">
+        <span class="mono sec-head__idx"><b>03</b> PROCESS</span>
+        <h2 class="h2 split">From a sentence<br/>to shipped.</h2>
+        <div class="process__meter"><span></span></div>
+      </div>
+      <ol class="steps">
+        <li class="step reveal"><span class="mono step__n">01 / ASK</span><h3>You tell us the problem.</h3><p>A 30-minute call. No decks, no jargon — just what's slow, manual or broken.</p></li>
+        <li class="step reveal"><span class="mono step__n">02 / MAP</span><h3>We map the system.</h3><p>Data, tools, people and edge cases. You get a clear plan, a timeline and a fixed price.</p></li>
+        <li class="step reveal"><span class="mono step__n">03 / BUILD</span><h3>We build in the open.</h3><p>Weekly demos you can click. Feedback goes straight into the next iteration.</p></li>
+        <li class="step reveal"><span class="mono step__n">04 / SHIP</span><h3>We ship, measure, improve.</h3><p>Launch, monitoring and handover — or we stay on and keep making it smarter.</p></li>
+      </ol>
+    </section>
+
+    <!-- ============ 04 WORK ============ -->
+    <section class="work" id="work">
+      <header class="sec-head">
+        <span class="mono sec-head__idx"><b>04</b> WORK</span>
+        <h2 class="h2 split">Selected builds.</h2>
+      </header>
+      <div class="work__list">
+        <a class="project reveal" href="#contact" data-cover="1">
+          <div class="project__cover"><div class="cover cover--1"><span class="mono">AGENT · SUPPORT</span></div></div>
+          <div class="project__info"><h3>Support agent</h3><p>Answers tickets from the knowledge base, escalates the rest with full context.</p><span class="mono">CASE STUDY — SOON</span></div>
+        </a>
+        <a class="project reveal" href="#contact" data-cover="2">
+          <div class="project__cover"><div class="cover cover--2"><span class="mono">WORKFLOW · SALES</span></div></div>
+          <div class="project__info"><h3>Lead intake → CRM</h3><p>Every inbound lead enriched, scored and routed in seconds, not days.</p><span class="mono">CASE STUDY — SOON</span></div>
+        </a>
+        <a class="project reveal" href="#contact" data-cover="3">
+          <div class="project__cover"><div class="cover cover--3"><span class="mono">WEB · APP</span></div></div>
+          <div class="project__info"><h3>Site + AI search</h3><p>A motion-led website with a built-in assistant that knows every page.</p><span class="mono">CASE STUDY — SOON</span></div>
+        </a>
+      </div>
+    </section>
+
+    <!-- ============ 05 LAB ============ -->
+    <section class="lab" id="lab">
+      <div class="lab__canvas" id="lab-canvas"></div>
+      <div class="lab__ui">
+        <span class="mono sec-head__idx"><b>05</b> LAB</span>
+        <h2 class="h2">Things we play with.</h2>
+        <p class="lab__note">One cloud of particles, many shapes. Click to morph — drag your cursor through it.</p>
+        <div class="lab__btns" role="group" aria-label="Morph shape">
+          <button class="chip is-active" data-shape="sphere">Sphere</button>
+          <button class="chip" data-shape="text">rAlix</button>
+          <button class="chip" data-shape="helix">Helix</button>
+          <button class="chip" data-shape="wave">Wave</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ 06 FOUNDERS ============ -->
+    <section class="founders" id="founders">
+      <header class="sec-head">
+        <span class="mono sec-head__idx"><b>06</b> FOUNDERS</span>
+        <h2 class="h2 split">Two builders.<br/><span class="dim">One studio.</span></h2>
+      </header>
+      <div class="founders__grid">
+        <article class="founder reveal">
+          <div class="founder__canvas" id="founder-rahil"></div>
+          <div class="founder__info">
+            <span class="mono">CO-FOUNDER</span>
+            <h3>Rahil Manji</h3>
+            <p>Leads strategy and client partnerships — turning messy business problems into systems that run themselves.</p>
+          </div>
+        </article>
+        <article class="founder reveal">
+          <div class="founder__canvas" id="founder-ali"></div>
+          <div class="founder__info">
+            <span class="mono">CO-FOUNDER</span>
+            <h3>Ali Mehdi Hemani</h3>
+            <p>Leads engineering and AI — agents, automations and the products wrapped around them.</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- ============ 07 CONTACT ============ -->
+    <section class="contact" id="contact">
+      <span class="mono sec-head__idx"><b>07</b> CONTACT</span>
+      <h2 class="mega split">Let's build it.</h2>
+      <div class="contact__grid">
+        <p class="lead reveal">Tell us about the project. We reply within one business day — usually with questions, sometimes with a prototype.</p>
+        <form class="form reveal" id="contact-form">
+          <label><span class="mono">NAME</span><input name="name" required /></label>
+          <label><span class="mono">EMAIL</span><input name="email" type="email" required /></label>
+          <label class="full"><span class="mono">WHAT DO YOU NEED?</span><textarea name="message" rows="4" required></textarea></label>
+          <button class="btn btn--primary magnetic" type="submit">Send brief <svg viewBox="0 0 24 24" width="16" height="16"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2"/></svg></button>
+          <p class="form__status mono" role="status"></p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer__big" aria-hidden="true">rAlix AI</div>
+    <div class="footer__row">
+      <span class="mono">© <span data-year></span> rALIX AI</span>
+      <nav><a href="#work">Work</a><a href="#services">Services</a><a href="#founders">About</a><a href="#lab">Lab</a></nav>
+      <a href="#top" class="mono">BACK TO TOP ↑</a>
+    </div>
+  </footer>
+</body>
+</html>

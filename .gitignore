@@ -1,0 +1,9 @@
+# reference recordings (large, not part of the site)
+*.mp4
+*.mov
+
+# local tooling
+.claude/
+node_modules/
+.DS_Store
+Thumbs.db
